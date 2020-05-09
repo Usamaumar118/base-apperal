@@ -24,7 +24,9 @@ html{
 span{
     display: block;
 }
-
+img{
+    max-width: 100%;
+}
 
 
 
@@ -35,10 +37,9 @@ span{
     grid-template-columns: 1fr max-content;
     grid-template-rows: max-content 1fr;
     align-items: center;
-
-
     background: url('images/bg-pattern-desktop.svg') , 
                 var(--bg-red);
+    min-height: 100vh;
 }
 
 .header{
@@ -48,12 +49,18 @@ span{
 }
 .pic{
     grid-area: picture;
-    height: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.pic img{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
 }
 .text{
     grid-area: text;
     padding: 0 20%  0;
-
 }
 .text__heading{
     font-size: 6rem;
@@ -85,7 +92,7 @@ span{
 .text__form__email__label{
     position: relative;
     z-index: 0;
-    width: 95%;
+    width: 100%;
 
 }
 .text__form__email{
@@ -132,3 +139,110 @@ span{
     color: var(--c-soft-red);
     display: none;
 }
+
+
+@media only screen and (max-width: 1200px){
+    
+    html{
+        font-size: 60%;
+    }
+    
+    .container{
+        grid-template-columns: 60% 40%;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 1050px){
+    html{
+        font-size: 58%;
+    }
+    .container{
+        grid-template-columns: 55% 45%;
+    }
+
+    .text__form__email{
+        height: 5rem;
+    }
+    .text__form__submit{
+        height: 5.2rem;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px){
+    html{
+        font-size: 50%;
+    }
+    .header{
+        padding: 5rem 0;
+        margin-left: 10%;
+    }
+    .text{
+        padding: 0 10%  0;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 550px){
+    html{
+        font-size: 50%;
+    }
+
+    .container{
+        grid-template-areas: "header header"
+                            "picture picture"
+                            "text      text";
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content 1fr;
+    }
+
+    .header__logo{
+        width: 16rem;
+    }
+    .text__heading{
+        font-size: 4.8rem;
+
+    }
+    
+    .header{
+        padding: 2rem 0;
+    }
+    .text{
+        text-align: center;
+        padding: 20% 5%;
+    }
+    .pic{
+        height: 100%;
+    }
+
+    .pic img{
+        height: 100%;
+    }
+
+
+}
+

@@ -1,0 +1,134 @@
+:root{
+    --c-desaturated-red: hsl(0, 36%, 70%);
+    --c-soft-red: hsl(0, 93%, 68%);
+    --c-dark-grayish-red: hsl(0, 6%, 24%);
+
+    --bg-red : linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --g-red : linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+}
+
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'josefin sans', sans-serif;
+    box-sizing: border-box;
+}
+span{
+    display: block;
+}
+
+
+
+
+.container{
+    display: grid;
+    grid-template-areas: "header picture"
+                         "text   picture";
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: max-content 1fr;
+    align-items: center;
+
+
+    background: url('images/bg-pattern-desktop.svg') , 
+                var(--bg-red);
+}
+
+.header{
+    grid-area: header;
+    padding: 5rem 0;
+    margin-left: 20%;
+}
+.pic{
+    grid-area: picture;
+    height: 100%;
+}
+.text{
+    grid-area: text;
+    padding: 0 20%  0;
+
+}
+.text__heading{
+    font-size: 6rem;
+    letter-spacing: 1.5rem;
+    color: var(--c-dark-grayish-red);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.text__heading--pink{
+    color: var(--c-desaturated-red);
+    font-weight: 300;
+}
+
+.text__para{
+    font-size: 1.6rem;
+    color: var(--c-desaturated-red);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.text__form{
+    display: flex;
+    width: 100%;
+}
+
+.text__form__email__label{
+    position: relative;
+    z-index: 0;
+    width: 95%;
+
+}
+.text__form__email{
+    display: block;
+    width: 100%;
+    height: 4.5rem;
+    border: 1px solid var(--c-desaturated-red);
+    padding: 1.5rem 3rem;
+    font-family: inherit;
+
+    color: var(--c-desaturated-red);
+    font-size: 1.4rem;
+    border-radius: 22rem;
+}
+.text__form__email::placeholder{
+    color: var(--c-desaturated-red);
+}
+
+.text__form__submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5rem;
+    border: 1px solid transparent;
+    background: var(--g-red);
+    width: 10rem;
+    margin-left: -10%;
+    border-radius: 22rem;
+    box-shadow: 0 0 2rem var(--c-desaturated-red);
+    position: relative;
+    z-index: 0;
+
+
+}
+.error-icon{
+    position: absolute;
+    top: 15%;
+    display: none;
+    right: 14%;
+}
+.error-msg{
+    font-size: 1.4rem;
+    padding: 1rem 3rem;
+    color: var(--c-soft-red);
+    display: none;
+}
